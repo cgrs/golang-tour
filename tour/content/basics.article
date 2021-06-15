@@ -1,18 +1,20 @@
-Packages, variables, and functions.
-Learn the basic components of any Go program.
+Paquetes, variables, y funciones.
+Aprende los componentes básicos de cualquier programa en Go.
 
 The Go Authors
 https://golang.org
 
-* Packages
+Traducido y ampliado por Carlos González <carlos.gonzalez@kairosds.com>
 
-Every Go program is made up of packages.
+* Paquetes
 
-Programs start running in package `main`.
+Cada programa en Go program está compuesto por paquetes.
 
-This program is using the packages with import paths `"fmt"` and `"math/rand"`.
+Los programas se ejecutan en el paquete llamado `main`.
 
-By convention, the package name is the same as the last element of the import path. For instance, the `"math/rand"` package comprises files that begin with the statement `package`rand`.
+Este programa además está utilizando los paquetes cuya ruta de importación es `"fmt"` y `"math/rand"`.
+
+Por convención, el nombre del paquete es el mismo que el último elemento en la ruta de importación. Por ejemplo, el paquete `"math/rand"` comprende los ficheros que compienzan con la expresión `package`rand`.
 
 #appengine: *Note:* The environment in which these programs are executed is
 #appengine: deterministic, so each time you run the example program
@@ -21,111 +23,110 @@ By convention, the package name is the same as the last element of the import pa
 #appengine: (To see a different number, seed the number generator; see [[https://golang.org/pkg/math/rand/#Seed][`rand.Seed`]].
 #appengine: Time is constant in the playground, so you will need to use something else as the seed.)
 
-.play basics/packages.go
+.play basics/paquetes.go
 
-* Imports
+* Importaciones
 
-This code groups the imports into a parenthesized, "factored" import statement.
+En este código, los paquetes a importar se agrupan con paréntesis, como si se tratase de una expresión "factorizada".
 
-You can also write multiple import statements, like:
+También puedes escribir varias expresiones de importación, como:
 
 	import "fmt"
 	import "math"
 
-But it is good style to use the factored import statement.
+Pero es una buena práctica utilizar la expresión "factorizada".
 
 .play basics/imports.go
 
-* Exported names
+* Entidades exportadas
 
-In Go, a name is exported if it begins with a capital letter.
-For example, `Pizza` is an exported name, as is `Pi`, which is exported from
-the `math` package.
+En Go, para exportar una entidad, ésta tiene que empezar por una letra mayúscula.
+Por ejemplo, `Pizza` es una entidad exportada, así como `Pi`, que se exporta desde el paquete `math`.
 
-`pizza` and `pi` do not start with a capital letter, so they are not exported.
+`pizza` y `pi`, al no comenzar con mayúscula, no se exportan.
 
-When importing a package, you can refer only to its exported names.
-Any "unexported" names are not accessible from outside the package.
+Cuando importas un paquete, solamente puedes hacer referencia a sus entidades exportadas.
+Cualquier entidad "sin exportar" no es accesible desde fuera del paquete.
 
-Run the code. Notice the error message.
+Ejecuta el código y date cuenta del mensaje de error.
 
-To fix the error, rename `math.pi` to `math.Pi` and try it again.
+Para arreglarlo, renombra `math.pi` a `math.Pi` y vuelve a intentarlo.
 
 .play basics/exported-names.go
 
-* Functions
+* Funciones
 
-A function can take zero or more arguments.
+Una función puede tomar cero o más argumentos.
 
-In this example, `add` takes two parameters of type `int`.
+En este caso, `suma` tiene dos parámetros de tipo `int`.
 
-Notice that the type comes _after_ the variable name.
+Observa que el tipo se coloca _después_ del nombre de la variable.
 
-(For more about why types look the way they do, see the [[https://blog.golang.org/gos-declaration-syntax][article on Go's declaration syntax]].)
+(Si te estás preguntando por qué los tipos tienen este aspecto, lee este [[https://blog.golang.org/gos-declaration-syntax][artículo (en inglés) sobre la sintaxis de declaración de Go]].)
 
 .play basics/functions.go
 
-* Functions continued
+* Funciones (cont.)
 
-When two or more consecutive named function parameters share a type, you can omit the type from all but the last.
+Cuando dos o más parámetros con nombre consecutivos de una función comparten tipo, puedes omitir el tipo de todos excepto del último.
 
-In this example, we shortened
+En este ejemplo, se acorta
 
 	x int, y int
 
-to
+a
 
 	x, y int
 
 .play basics/functions-continued.go
 
-* Multiple results
+* Múltiples resultados
 
-A function can return any number of results.
+Una función puede devolver una cantidad arbitraria de resultados.
 
-The `swap` function returns two strings.
+La función `intercambiar` devuelve dos cadenas.
 
 .play basics/multiple-results.go
 
-* Named return values
+* Valores de retorno con nombre
 
-Go's return values may be named. If so, they are treated as variables defined at the top of the function.
+Los valores de retorno en Go pueden tener nombre. Si esto es así, son tratados como variables definidas al inicio de la función.
 
-These names should be used to document the meaning of the return values.
+Es recomendable usar estos nombres para documentar el significado de los valores de retorno.
 
-A `return` statement without arguments returns the named return values. This is known as a "naked" return.
+Una instrucción `return` sin argumentos devuelve los valores de los argumentos con nombre. Esto se conoce como un retorno "desnudo".
 
-Naked return statements should be used only in short functions, as with the example shown here. They can harm readability in longer functions.
+Las expresiones de retorno desnudas sólo deberían utilizarse en funciones cortas, como la que se muestra en el ejemplo, ya que pueden perjudicar la legibilidad en funciones más extensas.
 
 .play basics/named-results.go
 
 * Variables
 
-The `var` statement declares a list of variables; as in function argument lists, the type is last.
+La expresión `var` declara una lista de variables; al igual que en la lista de argumentos de una función, el tipo se escribe en último lugar.
 
-A `var` statement can be at package or function level. We see both in this example.
+Una instrucción `var` puede estar al nivel del paquete o de la función, como se puede ver en este ejemplo.
 
 .play basics/variables.go
 
-* Variables with initializers
+* Variables inicializadas
 
-A var declaration can include initializers, one per variable.
+La declaración de una variable con `var` puede incluir su inicialización, una por cada variable.
 
-If an initializer is present, the type can be omitted; the variable will take the type of the initializer.
+Si la inicialización está presente, se puede omitir el tipo; la variable tomará el tipo de su inicialización.
 
 .play basics/variables-with-initializers.go
 
-* Short variable declarations
+* Declaración corta de variables
 
-Inside a function, the `:=` short assignment statement can be used in place of a `var` declaration with implicit type.
+Dentro de una a función, la instrucción de asignación `:=` se puede usar en lugar de una declaración de una variable con `var` con un tipo implícito.
 
-Outside a function, every statement begins with a keyword (`var`, `func`, and so on) and so the `:=` construct is not available.
+Fuera de una función, cada instrucción comienza por una palabra clave (`var`, `func`, etc.) por lo que el uso de `:=` no está disponible.
 
 .play basics/short-variable-declarations.go
 
-* Basic types
+* Tipos básicos
 
-Go's basic types are
+Los tipos básicos en Go son los siguientes:
 
 	bool
 
@@ -134,102 +135,98 @@ Go's basic types are
 	int  int8  int16  int32  int64
 	uint uint8 uint16 uint32 uint64 uintptr
 
-	byte // alias for uint8
+	byte // alias de uint8
 
-	rune // alias for int32
-	     // represents a Unicode code point
+	rune // alias de int32
+	     // representa un carácter Unicode
 
 	float32 float64
 
 	complex64 complex128
 
-The example shows variables of several types,
-and also that variable declarations may be "factored" into blocks,
-as with import statements.
+El ejemplo muestra variables de varios tipos y también que las declaraciones de las variables pueden "factorizarse", al igual que las instrucciones de importación.
 
-The `int`, `uint`, and `uintptr` types are usually 32 bits wide on 32-bit systems and 64 bits wide on 64-bit systems.
-When you need an integer value you should use `int` unless you have a specific reason to use a sized or unsigned integer type.
+Los tipos `int`, `uint`, y `uintptr` son normalmente de 32 bits en sistemas de 32-bit y de 64 bits en sistemas de 64-bit.
+Cuando necesites un valor entero, es recomendable que utilices `int` a menos que tengas una razón concreta para utilizar un tipo de entero con un cierto tamaño o sin signo.
 
 .play basics/basic-types.go
 
-* Zero values
+* Valores cero
 
-Variables declared without an explicit initial value are given their
-_zero_value_.
+Las variables declaradas sin un valor inicial explícito toman su respectivo _valor_cero_.
 
-The zero value is:
+El valor cero es:
 
-- `0` for numeric types,
-- `false` for the boolean type, and
-- `""` (the empty string) for strings.
+- `0` para los tipos numéricos,
+- `false` para el tipo booleano, y
+- `""` (una cadena vacía) para las cadenas.
 
 .play basics/zero.go
 
-* Type conversions
+* Conversiones de tipo
 
-The expression `T(v)` converts the value `v` to the type `T`.
+La expresión `T(v)` convierte el valor `v` al tipo `T`.
 
-Some numeric conversions:
+Algunas conversiones numéricas:
 
 	var i int = 42
 	var f float64 = float64(i)
 	var u uint = uint(f)
 
-Or, put more simply:
+O, de manera más sencilla:
 
 	i := 42
 	f := float64(i)
 	u := uint(f)
 
-Unlike in C, in Go assignment between items of different type requires an
-explicit conversion.
-Try removing the `float64` or `uint` conversions in the example and see what happens.
+Al contrario de C, en Go las asignaciones entre ítems de tipo diferente requieren una conversión explícita.
+Intenta quitar las conversiones a `float64` o `uint` en el ejemplo y observa qué ocurre.
 
 .play basics/type-conversions.go
 
-* Type inference
+* Inferencia de tipo
 
-When declaring a variable without specifying an explicit type (either by using the `:=` syntax or `var`=` expression syntax), the variable's type is inferred from the value on the right hand side.
+Cuando se declara una variable sin especificar explícitamente su tipo (ya sea usando la sintaxis `:=` o `var`=`), el tipo de la variable se infiere por el valor del lado derecho.
 
-When the right hand side of the declaration is typed, the new variable is of that same type:
+Cuando se escribe la declaración de ese lado derecho, la nueva variable tendrá el mismo tipo:
 
 	var i int
-	j := i // j is an int
+	j := i // j es de tipo int
 
-But when the right hand side contains an untyped numeric constant, the new variable may be an `int`, `float64`, or `complex128` depending on the precision of the constant:
+Pero cuando el lado derecho contiene una constante numérica sin tipo, esa variable nueva podrá ser un `int`, `float64`, o `complex128` dependiendo de la precisión de la constante:
 
 	i := 42           // int
 	f := 3.142        // float64
 	g := 0.867 + 0.5i // complex128
 
-Try changing the initial value of `v` in the example code and observe how its type is affected.
+Prueba a cambiar el valor inicial de `v` en el código de ejemplo y observa cómo le afecta a su tipo.
 
 .play basics/type-inference.go
 
-* Constants
+* Constantes
 
-Constants are declared like variables, but with the `const` keyword.
+Las constantes se declaran como las variables, pero con la palabra clave `const`.
 
-Constants can be character, string, boolean, or numeric values.
+Las constantes pueden ser de tipo carácter, cadena, booleano o numérico.
 
-Constants cannot be declared using the `:=` syntax.
+Las constantes no se pueden declarar usando la sintaxis `:=`.
 
 .play basics/constants.go
 
-* Numeric Constants
+* Constantes numéricas
 
-Numeric constants are high-precision _values_.
+Las constantes numéricas son valores de alta precisión.
 
-An untyped constant takes the type needed by its context.
+Una constante sin tipo toma el que necesita a través de su contexto.
 
-Try printing `needInt(Big)` too.
+Intenta imprimir también `necesitaInt(Enorme)`.
 
-(An `int` can store at maximum a 64-bit integer, and sometimes less.)
+(Una variable de tipo `int` puede almacenar como mucho un entero de 64-bit, a veces menos.)
 
 .play basics/numeric-constants.go
 
-* Congratulations!
+* ¡Enhorabuena!
 
-You finished this lesson!
+¡Has terminado esta lección!
 
-You can go back to the list of [[/list][modules]] to find what to learn next, or continue with the [[javascript:click('.next-page')][next lesson]].
+Puedes volver a la lista de [[/list][módulos]] para ver qué es lo próximo que quieres aprender, o continuar con la [[javascript:click('.next-page')][siguiente lección]].

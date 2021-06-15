@@ -7,10 +7,10 @@ import "fmt"
 const Pi = 3.14
 
 func main() {
-	const World = "世界"
-	fmt.Println("Hello", World)
-	fmt.Println("Happy", Pi, "Day")
+	const Mundo = "🌍"
+	fmt.Println("Hola", Mundo)
+	fmt.Println("Feliz", "Día", Pi)
 
-	const Truth = true
-	fmt.Println("Go rules?", Truth)
+	const Verdad = true
+	fmt.Println("¿Go mola?", Verdad)
 }

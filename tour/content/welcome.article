@@ -1,65 +1,62 @@
-Welcome!
-Learn how to use this tour: including how to navigate the different lessons and how to run code.
+¡Hola!
+Aprende a usar este tour, incluyendo cómo navegar por las diferentes lecciones y ejecutar el código.
 
 The Go Authors
 https://golang.org
 
-* Hello, 世界
+Traducido y ampliado por Carlos González <carlos.gonzalez@kairosds.com>
 
-Welcome to a tour of the [[https://golang.org/][Go programming language]].
+* Hola, 🌍
 
-The tour is divided into a list of modules that you can
-access by clicking on
-[[javascript:highlight(".logo")][A Tour of Go]] on the top left of the page.
+Te damos la bienvenida al tour del lenguaje de programación [[https://golang.org/][Go]].
 
-You can also view the table of contents at any time by clicking on the [[javascript:highlightAndClick(".nav")][menu]] on the top right of the page.
+El tour está dividido en una lista de módulos a los que puedes acceder haciendo click en
+[[javascript:highlight(".logo")][Un repaso a Go]] en la esquina superior izquierda de la página.
 
-Throughout the tour you will find a series of slides and exercises for you
-to complete.
+También puedes ver la tabla de contenidos en cualquier momento pulsando en el [[javascript:highlightAndClick(".nav")][menú]] en la esquina opuesta.
 
-You can navigate through them using
+A lo largo del tour vas a encontrar diversa información y ejercicios para que los completes.
 
-- [[javascript:highlight(".prev-page")]["previous"]] or `PageUp` to go to the previous page,
+Puedes navegar a través de los mismos usando
 
-- [[javascript:highlight(".next-page")]["next"]] or `PageDown` to go to the next page.
+- [[javascript:highlight(".prev-page")]["anterior"]] o la tecla `RePág` para ir a la página anterior,
 
-The tour is interactive. Click the
-[[javascript:highlightAndClick("#run")][Run]] button now
-(or press `Shift` + `Enter`) to compile and run the program on
-#appengine: a remote server.
-your computer.
-The result is displayed below the code.
+- [[javascript:highlight(".next-page")]["siguiente"]] o la tecla `AvPág` para ir a la siguiente página.
 
-These example programs demonstrate different aspects of Go. The programs in the tour are meant to be starting points for your own experimentation.
+El tour es interactivo. Pulsa el botón [[javascript:highlightAndClick("#run")][Ejecutar]] ahora (o pulsa `Mayús` + `Enter`) para compilar y ejecutar el programa en
+#appengine: un servidor remoto.
+tu ordenador.
+El resultado se mostrará debajo del código.
 
-Edit the program and run it again.
+Estos programas de ejemplo muestran diferentes características de Go. Están pensados para ser el punto de partida de tu propia experimentación.
 
-When you click on [[javascript:highlightAndClick("#format")][Format]]
-(shortcut: `Ctrl` + `Enter`), the text in the editor is formatted using the
-[[https://golang.org/cmd/gofmt/][gofmt]] tool. You can switch syntax highlighting on and off
-by clicking on the [[javascript:highlightAndClick(".syntax-checkbox")][syntax]] button.
+Edita el programa y vuelve a ejecutarlo.
 
-When you're ready to move on, click the [[javascript:highlightAndClick(".next-page")][right arrow]] below or type the `PageDown` key.
+Cuando haces click en [[javascript:highlightAndClick("#format")][Formato]]
+(atajo: `Control` + `Enter`), el texto en el editor toma formato usando la herramienta
+[[https://golang.org/cmd/gofmt/][gofmt]]. También puedes activar o desactivar el resaltado de sintáxis pulsando el botón de [[javascript:highlightAndClick(".syntax-checkbox")][sintaxis]].
 
-.play welcome/hello.go
+Cuando te sientas libre de continuar, pulsa el botón de abajo con la [[javascript:highlightAndClick(".next-page")][flecha derecha]] o pulsa la tecla `AvPág`.
 
-* Go local
+.play welcome/hola.go
 
-The tour is available in other languages:
+* Go en tu idioma
 
-- [[https://go-tour-br.appspot.com/][Brazilian Portuguese — Português do Brasil]]
-- [[https://go-tour-ca.appspot.com/][Catalan — Català]]
-- [[https://tour.go-zh.org/][Simplified Chinese — 中文（简体）]]
-- [[https://go-tour-cz.appspot.com/][Czech — Česky]]
-- [[https://go-tour-fr.appspot.com/][French — Français]]
-- [[https://go-tour-id2.appspot.com/][Indonesian — Bahasa Indonesia]]
-- [[https://go-tour-jp.appspot.com/][Japanese — 日本語]]
-- [[https://go-tour-ko.appspot.com/][Korean — 한국어]]
-- [[https://go-tour-pl1.appspot.com/][Polish — Polski]]
+El tour también se encuentra disponible en otros idiomas:
+
+- [[https://go-tour-br.appspot.com/][Portugués de Brasil — Português do Brasil]]
+- [[https://go-tour-ca.appspot.com/][Catalán — Català]]
+- [[https://tour.go-zh.org/][Chino simplificado — 中文（简体）]]
+- [[https://go-tour-cz.appspot.com/][Checo — Česky]]
+- [[https://go-tour-fr.appspot.com/][Francés — Français]]
+- [[https://go-tour-id2.appspot.com/][Indoné — Bahasa Indonesia]]
+- [[https://go-tour-jp.appspot.com/][Japonés — 日本語]]
+- [[https://go-tour-ko.appspot.com/][Coreano — 한국어]]
+- [[https://go-tour-pl1.appspot.com/][Polaco — Polski]]
 - [[https://go-tour-th.appspot.com/][Thai — ภาษาไทย]]
 - [[https://go-tour-uz.appspot.com/][Uzbek — Ўзбекча]]
 
-Click the [[javascript:highlightAndClick(".next-page")]["next"]] button or type `PageDown` to continue.
+Pulsa el botón [[javascript:highlightAndClick(".next-page")]["siguiente"]] o la tecla `AvPág` para continuar.
 
 #appengine: * Go offline (optional)
 #appengine:
@@ -99,9 +96,8 @@ Click the [[javascript:highlightAndClick(".next-page")]["next"]] button or type 
 #appengine:
 #appengine: .play welcome/sandbox.go
 
-* Congratulations
+* ¡Enhorabuena!
 
-You've finished the first module of the tour!
+¡Has completado el primer módulo del tour!
 
-Now click on [[javascript:highlightAndClick(".logo")][A Tour of Go]] to find out what else
-you can learn about Go, or go directly to the [[javascript:click('.next-page')][next lesson]].
+Pulsa ahora en [[javascript:highlightAndClick(".logo")][Un repaso a Go]] para averiguar qué más puedes aprender sobre Go, o ve directamente a la [[javascript:click('.next-page')][siguiente lección]].
