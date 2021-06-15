@@ -200,16 +200,16 @@ ul {
     background: #fff;
 }
 .menu-button[imports-checkbox]:after {
-    content: ' off';
+    content: ' desactivados';
 }
 .menu-button[imports-checkbox].active:after {
-    content: ' on';
+    content: ' activados';
 }
 .menu-button[syntax-checkbox]:after {
-    content: ' off';
+    content: ' desactivada';
 }
 .menu-button[syntax-checkbox].active:after {
-    content: ' on';
+    content: ' activada';
 }
 #file-menu .menu-button {
     float: right;
@@ -217,7 +217,6 @@ ul {
 a#run, a#kill {
     background-color: #375eab;
     color: #fff;
-    width: 40px;
     text-align: center;
 }
 #run:hover:not(:active), #kill:hover:not(:active) {
