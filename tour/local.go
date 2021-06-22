@@ -30,7 +30,7 @@ const (
 )
 
 var (
-	httpListen  = flag.String("http", "127.0.0.1:3999", "host:port to listen on")
+	httpListen  = flag.String("http", ":3999", "host:port to listen on")
 	openBrowser = flag.Bool("openbrowser", false, "open browser automatically")
 )
 
@@ -157,7 +157,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 func lessonHandler(w http.ResponseWriter, r *http.Request) {
 	lesson := strings.TrimPrefix(r.URL.Path, "/lesson/")
 	if err := writeLesson(lesson, w); err != nil {
-		if err == lessonNotFound {
+		if err == errLessonNotFound {
 			http.NotFound(w, r)
 		} else {
 			log.Println(err)
