@@ -5,9 +5,9 @@ package main
 import "fmt"
 
 func main() {
-	sum := 1
-	for ; sum < 1000; {
-		sum += sum
+	suma := 1
+	for ;suma < 1000; {
+		suma += suma
 	}
-	fmt.Println(sum)
+	fmt.Println(suma)
 }

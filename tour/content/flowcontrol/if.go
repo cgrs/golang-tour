@@ -7,13 +7,13 @@ import (
 	"math"
 )
 
-func sqrt(x float64) string {
+func raíz(x float64) string {
 	if x < 0 {
-		return sqrt(-x) + "i"
+		return raíz(-x) + "i"
 	}
 	return fmt.Sprint(math.Sqrt(x))
 }
 
 func main() {
-	fmt.Println(sqrt(2), sqrt(-4))
+	fmt.Println(raíz(2), raíz(-4))
 }
