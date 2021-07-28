@@ -4,11 +4,11 @@ package main
 
 import "fmt"
 
-type Vertex struct {
+type Vértice struct {
 	Lat, Long float64
 }
 
-var m = map[string]Vertex{
+var m = map[string]Vértice{
 	"Bell Labs": {40.68433, -74.39967},
 	"Google":    {37.42202, -122.08408},
 }

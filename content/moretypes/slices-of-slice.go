@@ -8,21 +8,21 @@ import (
 )
 
 func main() {
-	// Create a tic-tac-toe board.
-	board := [][]string{
+	// Crea un tablero de tres en raya.
+	tablero := [][]string{
 		[]string{"_", "_", "_"},
 		[]string{"_", "_", "_"},
 		[]string{"_", "_", "_"},
 	}
 
-	// The players take turns.
-	board[0][0] = "X"
-	board[2][2] = "O"
-	board[1][2] = "X"
-	board[1][0] = "O"
-	board[0][2] = "X"
+	// Los jugadores se turnan.
+	tablero[0][0] = "X"
+	tablero[2][2] = "O"
+	tablero[1][2] = "X"
+	tablero[1][0] = "O"
+	tablero[0][2] = "X"
 
-	for i := 0; i < len(board); i++ {
-		fmt.Printf("%s\n", strings.Join(board[i], " "))
+	for i := 0; i < len(tablero); i++ {
+		fmt.Printf("%s\n", strings.Join(tablero[i], " "))
 	}
 }

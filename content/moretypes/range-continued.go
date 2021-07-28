@@ -5,11 +5,11 @@ package main
 import "fmt"
 
 func main() {
-	pow := make([]int, 10)
-	for i := range pow {
-		pow[i] = 1 << uint(i) // == 2**i
+	potencias := make([]int, 10)
+	for i := range potencias {
+		potencias[i] = 1 << uint(i) // == 2**i
 	}
-	for _, value := range pow {
+	for _, value := range potencias {
 		fmt.Printf("%d\n", value)
 	}
 }

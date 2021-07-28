@@ -6,19 +6,19 @@ import "fmt"
 
 func main() {
 	a := make([]int, 5)
-	printSlice("a", a)
+	pintaSlice("a", a)
 
 	b := make([]int, 0, 5)
-	printSlice("b", b)
+	pintaSlice("b", b)
 
 	c := b[:2]
-	printSlice("c", c)
+	pintaSlice("c", c)
 
 	d := c[2:5]
-	printSlice("d", d)
+	pintaSlice("d", d)
 }
 
-func printSlice(s string, x []int) {
+func pintaSlice(s string, x []int) {
 	fmt.Printf("%s len=%d cap=%d %v\n",
 		s, len(x), cap(x), x)
 }

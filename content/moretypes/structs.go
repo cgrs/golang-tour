@@ -4,11 +4,11 @@ package main
 
 import "fmt"
 
-type Vertex struct {
+type Punto struct {
 	X int
 	Y int
 }
 
 func main() {
-	fmt.Println(Vertex{1, 2})
+	fmt.Println(Punto{1, 2})
 }

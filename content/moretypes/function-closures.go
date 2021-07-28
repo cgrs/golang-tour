@@ -4,16 +4,16 @@ package main
 
 import "fmt"
 
-func adder() func(int) int {
-	sum := 0
+func sumador() func(int) int {
+	suma := 0
 	return func(x int) int {
-		sum += x
-		return sum
+		suma += x
+		return suma
 	}
 }
 
 func main() {
-	pos, neg := adder(), adder()
+	pos, neg := sumador(), sumador()
 	for i := 0; i < 10; i++ {
 		fmt.Println(
 			pos(i),
