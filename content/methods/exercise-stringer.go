@@ -4,16 +4,16 @@ package main
 
 import "fmt"
 
-type IPAddr [4]byte
+type DirecciónIP [4]byte
 
-// TODO: Add a "String() string" method to IPAddr.
+// TODO: Añade un método "String() string" al tipo DirecciónIP.
 
 func main() {
-	hosts := map[string]IPAddr{
-		"loopback":  {127, 0, 0, 1},
-		"googleDNS": {8, 8, 8, 8},
+	servidores := map[string]DirecciónIP{
+		"Interno":    {127, 0, 0, 1},
+		"DNS Google": {8, 8, 8, 8},
 	}
-	for name, ip := range hosts {
-		fmt.Printf("%v: %v\n", name, ip)
+	for nombre, ip := range servidores {
+		fmt.Printf("%v: %v\n", nombre, ip)
 	}
 }

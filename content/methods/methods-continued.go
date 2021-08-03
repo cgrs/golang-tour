@@ -7,9 +7,9 @@ import (
 	"math"
 )
 
-type MyFloat float64
+type MiFlotante float64
 
-func (f MyFloat) Abs() float64 {
+func (f MiFlotante) Abs() float64 {
 	if f < 0 {
 		return float64(-f)
 	}
@@ -17,6 +17,6 @@ func (f MyFloat) Abs() float64 {
 }
 
 func main() {
-	f := MyFloat(-math.Sqrt2)
+	f := MiFlotante(-math.Sqrt2)
 	fmt.Println(f.Abs())
 }

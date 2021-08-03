@@ -7,25 +7,25 @@ import (
 	"time"
 )
 
-type MyError struct {
-	When time.Time
-	What string
+type MiError struct {
+	Cuándo time.Time
+	Qué    string
 }
 
-func (e *MyError) Error() string {
-	return fmt.Sprintf("at %v, %s",
-		e.When, e.What)
+func (e *MiError) Error() string {
+	return fmt.Sprintf("en %v, %s",
+		e.Cuándo, e.Qué)
 }
 
-func run() error {
-	return &MyError{
+func ejecutar() error {
+	return &MiError{
 		time.Now(),
-		"it didn't work",
+		"no funcionó",
 	}
 }
 
 func main() {
-	if err := run(); err != nil {
+	if err := ejecutar(); err != nil {
 		fmt.Println(err)
 	}
 }

@@ -7,15 +7,15 @@ import (
 	"math"
 )
 
-type Vertex struct {
+type Vértice struct {
 	X, Y float64
 }
 
-func (v Vertex) Abs() float64 {
+func (v Vértice) Abs() float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
 func main() {
-	v := Vertex{3, 4}
+	v := Vértice{3, 4}
 	fmt.Println(v.Abs())
 }

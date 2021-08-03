@@ -12,13 +12,13 @@ type T struct {
 	S string
 }
 
-// This method means type T implements the interface I,
-// but we don't need to explicitly declare that it does so.
+// Este método quiere decir que T implementa la interfaz I,
+// pero no hace falta declarar la implementación explícitamente.
 func (t T) M() {
 	fmt.Println(t.S)
 }
 
 func main() {
-	var i I = T{"hello"}
+	var i I = T{"hola"}
 	i.M()
 }

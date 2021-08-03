@@ -4,10 +4,10 @@ package main
 
 import "golang.org/x/tour/reader"
 
-type MyReader struct{}
+type MiLector struct{}
 
-// TODO: Add a Read([]byte) (int, error) method to MyReader.
+// TODO: Añade el método Read([]byte) (int, error) al tipo MiLector.
 
 func main() {
-	reader.Validate(MyReader{})
+	reader.Validate(MiLector{})
 }

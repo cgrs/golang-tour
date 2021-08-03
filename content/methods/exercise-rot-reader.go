@@ -8,12 +8,12 @@ import (
 	"strings"
 )
 
-type rot13Reader struct {
+type LectorRot13 struct {
 	r io.Reader
 }
 
 func main() {
-	s := strings.NewReader("Lbh penpxrq gur pbqr!")
-	r := rot13Reader{s}
+	s := strings.NewReader("¡Unf erfhrygb ry ravtzn!")
+	r := LectorRot13{s}
 	io.Copy(os.Stdout, &r)
 }
