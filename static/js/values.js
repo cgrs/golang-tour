@@ -25,7 +25,7 @@ value('tableOfContents', [{
 }, {
     'id': 'concurrency',
     'title': 'Concurrencia',
-    'description': '<p>Go proporciona características para la concurrencia como parte esencial del lenguaje.</p><p>Este módulo trata sobre "gorutinas" (goroutines) y canales, y cómo se utilizan para implementar diferentes patrones de concurrencia.</p>',
+    'description': '<p>Go proporciona características para la concurrencia como parte esencial del lenguaje.</p><p>Este módulo trata sobre "gorrutinas" (goroutines) y canales, y cómo se utilizan para implementar diferentes patrones de concurrencia.</p>',
     'lessons': ['concurrency']
 }]).
 
