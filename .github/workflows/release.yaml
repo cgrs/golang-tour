@@ -1,0 +1,117 @@
+name: Create release and upload binaries
+on:
+  workflow_dispatch: {}
+jobs:
+  build-linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.16
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.16
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build
+        run: |
+          go build -trimpath .
+          mkdir release
+          tar -zcvf release/golang-tour-linux-amd64.tar.gz golang-tour
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: linux-latest
+          path: release
+  build-windows:
+    name: Build Windows
+    runs-on: windows-latest
+    steps:
+      - name: Set up Go 1.16
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.16
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build
+        run: |
+          mkdir release
+          go build -trimpath -o .\release\golang-tour-windows-amd64.exe ./
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: windows-latest
+          path: release
+  build-darwin:
+    name: Build Darwin amd64
+    runs-on: macos-latest
+    steps:
+      - name: Set up Go 1.16
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.16
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build
+        run: |
+          go build -trimpath .
+          mkdir release
+          tar -zcvf release/golang-tour-darwin-amd64.tar.gz golang-tour
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: darwin-latest
+          path: release
+  release:
+    name: Create and upload release
+    needs: [build-linux, build-windows, build-darwin]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Linux artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: linux-latest
+      - name: Download Windows artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: windows-latest
+      - name: Download Darwin artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: darwin-latest
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload linux-amd64
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outpus.upload_url }}
+          asset_path: ./linux-latest/golang-tour-linux-amd64.tar.gz
+          asset_name: golang-tour-linux-amd64.tar.gz
+          asset_content_type: application/gzip
+      - name: Upload darwin-amd64
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outpus.upload_url }}
+          asset_path: ./darwin-latest/golang-tour-darwin-amd64.tar.gz
+          asset_name: golang-tour-darwin-amd64.tar.gz
+          asset_content_type: application/gzip
+      - name: Upload windows-amd64
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outpus.upload_url }}
+          asset_path: ./windows-latest/golang-tour-windows-amd64.exe
+          asset_name: golang-tour-windows-amd64.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
