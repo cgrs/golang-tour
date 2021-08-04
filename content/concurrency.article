@@ -20,7 +20,7 @@ La evaluación de `f`, `x`, `y`, y `z` ocurre en la gorrutina actual y la ejecuc
 
 Las gorrutinas se ejecutan en el mismo espacio de direcciones, por lo que el acceso a la memoria compartida debe sincronizarse. El paquete [[https://golang.org/pkg/sync/][`sync`]] proporciona primitivas muy útiles, aunque no las necesitarás mucho en Go ya que hay otras primitivas. (Las verás en el siguiente apartado.)
 
-.play concurrency/goroutine.go
+.play concurrency/goroutines.go
 
 * Canales
 
