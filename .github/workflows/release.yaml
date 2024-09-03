@@ -69,15 +69,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Linux artifacts
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: linux-latest
       - name: Download Windows artifacts
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: windows-latest
       - name: Download Darwin artifacts
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: darwin-latest
       - name: Create Release
